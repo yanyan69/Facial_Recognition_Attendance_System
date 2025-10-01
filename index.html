@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remote Access Exam</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Dashboard -->
+    <div id="dashboard-section">
+        <h1>Facial Recognition</h1>
+        
+        <!-- AI Section -->
+        <h2>Emerging Technology Hands-on Exam</h2>
+        <p>Submitted By: Yuan Moros, Christian Narvaez, and Jerald James Preclaro</p>
+        <p>Submitted To: Engr. John Errol Mampusti</p>
+        <div class="video-container">
+            <video id="webcam" autoplay playsinline width="320" height="240" style="border:1px solid #ccc;"></video>
+            <canvas id="canvas" width="320" height="240" style="display:none;"></canvas>
+        </div>
+        <p id="prediction-text"></p>
+
+        <hr>
+
+        <!-- MIT App -->
+        <h2>MIT App</h2>
+        <p><a href="my_mit_app.apk" download>Download MIT App (.apk)</a></p>
+        
+        <hr>
+
+        <!-- Remote Access -->
+        <h2>Remote Access</h2>
+        <p><code>python -m http.server 8000</code> <code>http://your-ip:8000</code>.</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
