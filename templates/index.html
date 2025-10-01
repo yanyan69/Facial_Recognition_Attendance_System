@@ -15,17 +15,13 @@
         <h2>Emerging Technology Hands-on Exam</h2>
         <p>Submitted By: Yuan Moros, Christian Narvaez, and Jerald James Preclaro</p>
         <p>Submitted To: Engr. John Errol Mampusti</p>
+        <img src="{{ url_for('video_feed') }}" width="640" height="480" id="stream-img" alt="Live Feed">
 
-        <div class="video-container">
-            <img src="{{ url_for('video_feed') }}" width="640" height="480" style="border:1px solid #ccc;">
-        </div>
         <p id="prediction-text">Detecting...</p>
 
-        <h3>Time In</h3>
         <button id="timein-btn">Time In</button>
-
-        <h3>Time Out</h3>
         <button id="timeout-btn">Time Out</button>
+
         <hr>
 
         <!-- MIT App -->

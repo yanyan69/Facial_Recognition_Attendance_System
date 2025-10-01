@@ -1,30 +1,33 @@
 const predictionText = document.getElementById("prediction-text");
 
-// Start webcam
-navigator.mediaDevices.getUserMedia({ video: true })
-    .then(stream => {
-        video.srcObject = stream;
-    })
-    .catch(err => {
-        console.error("Error accessing webcam:", err);
-    });
-
 // Function to send a frame to Flask
 async function sendFrame(endpoint) {
-    let res = await fetch(endpoint, { method: "POST" });
-    let data = await res.json();
+    try {
+        let res = await fetch(endpoint, { method: "POST" });
+        let data = await res.json();
 
-    predictionText.textContent = data.status === "success"
-        ? `${data.name} ${data.action.replace("_", " ")} at ${data.time}`
-        : data.message;
-    
-    if (data.status === "success") {
-        updateLogs();
+        predictionText.textContent = data.status === "success"
+            ? `${data.name} ${data.action.replace("_", " ")} at ${data.time}`
+            : data.message;
+        
+        if (data.status === "success") {
+            updateLogs();  // Call if you implement this
+        }
+    } catch (err) {
+        predictionText.textContent = `Error: ${err.message}`;
+        console.error("Fetch error:", err);
     }
 }
+// Placeholder for updateLogs (expand if you want to fetch full CSV/logs via a new endpoint)
+function updateLogs() {
+    // Example: Fetch logs from a new '/logs' endpoint and append to a <div id="logs">
+    // fetch('/logs').then(res => res.json()).then(logs => { ... });
+    console.log("Logs updated (implement as needed)");
+}
 
-// Call on load
-window.addEventListener("load", updateLogs);
-// Button events
-document.getElementById("timein-btn").addEventListener("click", () => sendFrame("/timein"));
-document.getElementById("timeout-btn").addEventListener("click", () => sendFrame("/timeout"));
+// Button events (these will now attach reliably)
+document.addEventListener("DOMContentLoaded", () => {  // Use DOMContentLoaded for safety
+    document.getElementById("timein-btn").addEventListener("click", () => sendFrame("/timein"));
+    document.getElementById("timeout-btn").addEventListener("click", () => sendFrame("/timeout"));
+    updateLogs();  // Initial call
+});
