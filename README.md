@@ -1,4 +1,4 @@
-Remote Access Face Recognition
+Remote Access Face Recognition Attendance System
 Submitted By:
 Moros, Julian Dave
 Narvaez, Christian

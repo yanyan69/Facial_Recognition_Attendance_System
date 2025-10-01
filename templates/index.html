@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Remote Access Exam</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="static/style.css">
 </head>
 <body>
     <!-- Dashboard -->
@@ -15,12 +15,17 @@
         <h2>Emerging Technology Hands-on Exam</h2>
         <p>Submitted By: Yuan Moros, Christian Narvaez, and Jerald James Preclaro</p>
         <p>Submitted To: Engr. John Errol Mampusti</p>
-        <div class="video-container">
-            <video id="webcam" autoplay playsinline width="320" height="240" style="border:1px solid #ccc;"></video>
-            <canvas id="canvas" width="320" height="240" style="display:none;"></canvas>
-        </div>
-        <p id="prediction-text"></p>
 
+        <div class="video-container">
+            <img src="{{ url_for('video_feed') }}" width="640" height="480" style="border:1px solid #ccc;">
+        </div>
+        <p id="prediction-text">Detecting...</p>
+
+        <h3>Time In</h3>
+        <button id="timein-btn">Time In</button>
+
+        <h3>Time Out</h3>
+        <button id="timeout-btn">Time Out</button>
         <hr>
 
         <!-- MIT App -->
@@ -33,7 +38,6 @@
         <h2>Remote Access</h2>
         <p><code>python -m http.server 8000</code> <code>http://your-ip:8000</code>.</p>
     </div>
-
-    <script src="script.js"></script>
+    <script src="static/script.js"></script>
 </body>
 </html>
