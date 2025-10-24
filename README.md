@@ -17,13 +17,3 @@ git clone https://github.com/yanyan69/Facial_Recognition_Attendance_System.git
 cd Facial_Recognition_Attendance_System
 
 //"git pull" if may update ako, dont try to git push
-
-
-# Attendance System
-
-## Setup Instructions
-
-1. Clone the repository:
-   ```bash
-   git clone <repository-url>
-   cd attendance_system
