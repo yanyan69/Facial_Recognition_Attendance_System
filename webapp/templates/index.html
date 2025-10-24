@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remote Access Exam</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <!-- Dashboard -->
+    <div id="dashboard-section">
+        <h1>Facial Recognition</h1>
+        
+        <!-- AI Section -->
+        <h2>Emerging Technology Hands-on Exam</h2>
+        <p>Submitted By: Yuan Moros, Christian Narvaez, and Jerald James Preclaro</p>
+        <p>Submitted To: Engr. John Errol Mampusti</p>
+        <img src="{{ url_for('video_feed') }}" width="640" height="480" id="stream-img" alt="Live Feed">
+
+        <p id="prediction-text">Detecting...</p>
+
+        <button id="timein-btn">Time In</button>
+        <button id="timeout-btn">Time Out</button>
+
+        <hr>
+
+        <!-- Remote Access -->
+        <h2>Remote Access</h2>
+        <p><code>http://127.0.0.1:5000</code>.</p>
+    </div>
+    <script src="static/script.js"></script>
+</body>
+</html>
