@@ -1,2 +1,6 @@
-*.csv
+# .gitignore
+venv/
+*.pyc
 __pycache__/
+attendance_log.csv
+best.pt

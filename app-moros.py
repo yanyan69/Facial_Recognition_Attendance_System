@@ -1,3 +1,4 @@
+#python code na gawa ni yuan
 from flask import Flask, request, jsonify
 from ultralytics import YOLO
 import cv2
